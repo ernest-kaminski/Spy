@@ -6,7 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationBarView;
+
 public class SecondActivity extends AppCompatActivity {
+
+    private NavigationBarView bottomNavigationView;
 
     TextView secondActivityTextView;
 

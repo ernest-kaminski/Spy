@@ -11,9 +11,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.navigation.NavigationBarView;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mainbtn;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,4 +41,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
+
 }
