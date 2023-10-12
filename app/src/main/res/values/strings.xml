@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Spy</string>
-    <string name="start_click">CLICK ME</string>
+    <string name="start_click">KLIKNIJ ABY KONTYNUOWAĆ</string>
+    <string name="string_start">Witaj w grze Szpieg</string>
 </resources>

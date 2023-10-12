@@ -18,9 +18,8 @@ public class SecondActivity extends AppCompatActivity {
         secondActivityTextView = (TextView) findViewById(R.id.textview_second_activity);
 
         Intent intent = getIntent();
-        String krystianName = intent.getStringExtra("name");
 
-        secondActivityTextView.setText("Witaj " + krystianName);
+        secondActivityTextView.setText("Witaj");
 
     }
 }
