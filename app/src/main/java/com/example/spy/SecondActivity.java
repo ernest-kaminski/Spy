@@ -1,11 +1,19 @@
 package com.example.spy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.spy.mainFragments.CategoriesFragment;
+import com.example.spy.mainFragments.PlayersFragment;
+import com.example.spy.mainFragments.RulesFragment;
+import com.example.spy.mainFragments.SpiesFragment;
+import com.example.spy.mainFragments.TimerFragment;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -19,11 +27,49 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        secondActivityTextView = (TextView) findViewById(R.id.textview_second_activity);
-
         Intent intent = getIntent();
 
-        secondActivityTextView.setText("Witaj");
+        bottomNavigationView = (NavigationBarView) findViewById(R.id.bottom_nav_view);
+        bottomNavigationView.setOnItemSelectedListener(listener);
+        bottomNavigationView.setItemIconTintList(null);
+
+
+        Fragment defaultFragment = new RulesFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_second_activity, defaultFragment)
+                .commit();
+
+
+
 
     }
+
+
+    private final NavigationBarView.OnItemSelectedListener listener = new NavigationBarView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
+            int id = item.getItemId();
+            if (id == R.id.rules){
+                fragment = new RulesFragment();
+            } else if(id == R.id.players){
+                fragment = new PlayersFragment();
+            } else if(id == R.id.spies){
+                fragment = new SpiesFragment();
+            } else if(id == R.id.timer){
+                fragment = new TimerFragment();
+            } else if(id == R.id.categories){
+                fragment = new CategoriesFragment();
+            }
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_second_activity, fragment)
+                    .commit();
+
+
+            return false;
+        }
+    };
 }
