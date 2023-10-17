@@ -8,24 +8,54 @@
     android:background="@color/blue"
     android:padding="12dp">
 
-    <EditText
-        android:id="@+id/edittext"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/hello_textview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Wprowadź tekst"
-        android:padding="20dp"
+        android:text="@string/string_start"
+        android:textSize="48sp"
+        android:letterSpacing="0.1"
+        android:textStyle="bold|italic"
+        android:textColor="#222222"
         app:layout_constraintTop_toTopOf="parent"
-    />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="90dp"
+        >
+        <ImageView
+            android:id="@+id/image_view_start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            />
+    </androidx.cardview.widget.CardView>
+
 
     <Button
         android:id="@+id/main_activity_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_click"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="18sp"
+        android:letterSpacing="0.04"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
         />
 
 

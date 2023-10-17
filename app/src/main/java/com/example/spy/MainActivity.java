@@ -12,34 +12,24 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button mainbtn;
-    private EditText edittext;
-    private String stringFromEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        stringFromEditText = "";
-
         mainbtn = (Button) findViewById(R.id.main_activity_btn);
         mainbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stringFromEditText = edittext.getText().toString();
-                sendToSecondActivity(stringFromEditText);
+                sendToSecondActivity();
             }
         });
-
-        edittext = (EditText) findViewById(R.id.edittext);
-
     }
 
-    private void sendToSecondActivity(String stringFromEditText) {
+    private void sendToSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
-        intent.putExtra("name", stringFromEditText);
         startActivity(intent);
         finish();
     }

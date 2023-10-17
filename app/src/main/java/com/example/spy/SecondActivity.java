@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String krystianName = intent.getStringExtra("name");
 
-        secondActivityTextView.setText("Witaj " + krystianName);
+        secondActivityTextView.setText("Witaj ");
 
     }
 }
