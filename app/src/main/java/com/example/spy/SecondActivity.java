@@ -13,6 +13,7 @@ import com.example.spy.mainFragments.PlayersFragment;
 import com.example.spy.mainFragments.RulesFragment;
 import com.example.spy.mainFragments.SpiesFragment;
 import com.example.spy.mainFragments.TimerFragment;
+import com.example.spy.models.SpyGameModel;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
         bottomNavigationView = (NavigationBarView) findViewById(R.id.bottom_nav_view);
         bottomNavigationView.setOnItemSelectedListener(listener);
         bottomNavigationView.setItemIconTintList(null);
@@ -37,6 +39,15 @@ public class SecondActivity extends AppCompatActivity {
                 .replace(R.id.frame_second_activity, defaultFragment)
                 .commit();
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SpyGameModel spyGameModel = new SpyGameModel(3,1);
+        initializeSpyGameController(spyGameModel);
     }
 
     private final NavigationBarView.OnItemSelectedListener listener = new NavigationBarView.OnItemSelectedListener() {
@@ -64,5 +75,9 @@ public class SecondActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    public void initializeSpyGameController(SpyGameModel spyGameModel){
+        ((appRunner) this.getApplication()).setSpyGameModel(spyGameModel);
+    }
 
 }
