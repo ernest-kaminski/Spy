@@ -1,8 +1,11 @@
 package com.example.spy.models;
 
+import java.util.ArrayList;
+
 public class SpyGameModel {
     private int numberOfPlayers;
     private int numberOfSpies;
+    private ArrayList<String> playersNames;
 
    public SpyGameModel(){
 
@@ -11,6 +14,10 @@ public class SpyGameModel {
    public SpyGameModel(int numberOfPlayers, int numberOfSpies){
        this.numberOfPlayers = numberOfPlayers;
        this.numberOfSpies = numberOfSpies;
+       playersNames = new ArrayList<String>();
+       for(int i =0; i<numberOfPlayers; i++){
+           playersNames.add("");
+       }
    }
 
    public void setNumberOfPlayers(int numberOfPlayers){
@@ -27,6 +34,14 @@ public class SpyGameModel {
 
     public void setNumberOfSpies(int numberOfSpies) {
         this.numberOfSpies = numberOfSpies;
+    }
+
+    public ArrayList<String> getPlayersNames() {
+        return playersNames;
+    }
+
+    public void setPlayersNames(ArrayList<String> playersNames) {
+        this.playersNames = playersNames;
     }
 }
 

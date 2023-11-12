@@ -2,4 +2,5 @@
     <string name="app_name">Spy</string>
     <string name="start_click">KLIKNIJ ABY KONTYNUOWAĆ</string>
     <string name="string_start">Witaj w grze Szpieg</string>
+    <string name="string_name_hint">Wprowadź imię</string>
 </resources>
