@@ -2,65 +2,63 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="12dp">
 
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/string_select_number_of_spies"
+    android:textSize="32sp"
+    android:textColor="#eeeeee"
+    android:textAlignment="center"
+    app:layout_constraintTop_toTopOf="parent"
+    />
 
-
-
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:strokeColor="@color/blue"
+    app:strokeWidth="2dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
+
         >
 
-            <Button
-                android:id="@+id/plus_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="40dp"/>
-            
-            <TextView
-                android:id="@+id/spies_counter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textSize="40dp"
-                android:padding="40dp"/>
-        
+        <Button
+            android:id="@+id/plus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="40dp"/>
 
-            <Button
-                android:id="@+id/minus_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="-"
-                android:textSize="40dp"/>
+        <TextView
+            android:id="@+id/spies_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="40dp"
+            android:padding="40dp"/>
+
+
+        <Button
+            android:id="@+id/minus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="40dp"/>
     </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-    <TextView
-        android:id="@+id/fragment_spies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spies Fragment"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="30dp"/>
-
-
+</com.google.android.material.card.MaterialCardView>
 
 
 

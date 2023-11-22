@@ -58,6 +58,7 @@
             android:text="@string/string_back"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:enabled="false"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -70,6 +71,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_view_menu"
         app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="#000000"
+        app:itemBackground="@drawable/bottom_nav_view_item_background"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+
         />
 
 

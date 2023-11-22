@@ -1,6 +1,10 @@
 package com.example.spy.mainFragments;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +16,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.spy.R;
+import com.example.spy.appRunner;
+import com.example.spy.models.SpyGameModel;
 
 public class SpiesFragment extends Fragment {
 
     Button plus_btn;
     Button minus_btn;
     TextView count;
-    int count_value = 1;
-
+    int numberOfPlayers, numberOfSpies;
+    Context context;
+    SpyGameModel spyGameModel;
 
 
     @Nullable
@@ -32,12 +39,20 @@ public class SpiesFragment extends Fragment {
         minus_btn = (Button) v.findViewById(R.id.minus_btn);
         count = (TextView) v.findViewById(R.id.spies_counter);
 
+        context = getActivity().getApplicationContext();
+        spyGameModel = ((appRunner) context).getSpyGameModel();
+
+        numberOfSpies = spyGameModel.getNumberOfSpies();
+        numberOfPlayers = spyGameModel.getNumberOfPlayers();
+
+        count.setText(String.valueOf(numberOfSpies));
+
         plus_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(count_value <= 8){
-                    count_value++;
-                    count.setText(String.valueOf(count_value));
+                if(numberOfSpies < numberOfPlayers - 2 ){
+                    numberOfSpies++;
+                    count.setText(String.valueOf(numberOfSpies));
                 }
             }
         });
@@ -45,10 +60,11 @@ public class SpiesFragment extends Fragment {
         minus_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(count_value > 1 )
+                if(numberOfSpies > 1 )
                 {
-                count_value--;
-                count.setText(String.valueOf(count_value));}
+                    numberOfSpies--;
+                count.setText(String.valueOf(numberOfSpies));
+                }
             }
         });
         return v;

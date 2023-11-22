@@ -10,9 +10,9 @@
         android:id="@+id/spies"
         android:title="Szpiedzy"/>
     <item
-        android:id="@+id/timer"
-        android:title="Czas Rundy"/>
+        android:id="@+id/details"
+        android:title="Szczegóły"/>
     <item
-        android:id="@+id/categories"
-        android:title="Hasła"/>
+        android:id="@+id/summary"
+        android:title="Rozpocznij"/>
 </menu>

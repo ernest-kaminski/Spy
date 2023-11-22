@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.spy.R;
 
-public class CategoriesFragment extends Fragment {
+public class DetailsFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.categories_fragment, container, false);
+        View v = inflater.inflate(R.layout.timer_fragment, container, false);
 
 
 
