@@ -69,6 +69,7 @@ public class SecondActivity extends AppCompatActivity {
 
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setCustomAnimations(R.anim.slide_in, R.anim.fade_out)
                     .replace(R.id.frame_second_activity, fragment)
                     .commit();
 

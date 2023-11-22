@@ -70,7 +70,7 @@ public class PlayersFragment extends Fragment {
         minus_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(counter > 1 )
+                if(counter > 3 )
                 {
                     counter--;
                     ((appRunner) context).getSpyGameModel().setNumberOfPlayers(counter);
