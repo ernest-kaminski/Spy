@@ -133,7 +133,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SpyGameModel spyGameModel = new SpyGameModel(3,1);
+        SpyGameModel spyGameModel = new SpyGameModel(3,1,1);
         initializeSpyGameController(spyGameModel);
     }
 

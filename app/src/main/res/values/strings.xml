@@ -7,4 +7,5 @@
     <string name="string_proceed">Kontynuuj</string>
     <string name="string_back">Cofnij</string>
     <string name="string_begin_game">Rozpocznij</string>
+    <string name="string_set_timer">Ustal czas rundy</string>
 </resources>

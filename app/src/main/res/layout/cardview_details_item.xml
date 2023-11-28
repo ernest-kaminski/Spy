@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/material_card_view_details"
+    android:layout_width="160dp"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="2dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="3dp"
+    app:strokeColor="@color/blue"
+    android:background="@null"
+    >
+
+    <TextView
+        android:id="@+id/cardview_item_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geografia"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        />
+
+</com.google.android.material.card.MaterialCardView>

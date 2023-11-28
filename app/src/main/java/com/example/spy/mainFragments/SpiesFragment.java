@@ -53,6 +53,8 @@ public class SpiesFragment extends Fragment {
                 if(numberOfSpies < numberOfPlayers - 2 ){
                     numberOfSpies++;
                     count.setText(String.valueOf(numberOfSpies));
+                    spyGameModel.setNumberOfSpies(numberOfSpies);
+                    updateSpyGameModel(spyGameModel);
                 }
             }
         });
@@ -63,11 +65,17 @@ public class SpiesFragment extends Fragment {
                 if(numberOfSpies > 1 )
                 {
                     numberOfSpies--;
-                count.setText(String.valueOf(numberOfSpies));
+                    count.setText(String.valueOf(numberOfSpies));
+                    spyGameModel.setNumberOfSpies(numberOfSpies);
+                    updateSpyGameModel(spyGameModel);
                 }
             }
         });
         return v;
 
+    }
+
+    private void updateSpyGameModel(SpyGameModel spyGameModel){
+        ((appRunner) context).setSpyGameModel(spyGameModel);
     }
 }
