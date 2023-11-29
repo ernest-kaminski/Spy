@@ -8,4 +8,11 @@
     <string name="string_back">Cofnij</string>
     <string name="string_begin_game">Rozpocznij</string>
     <string name="string_set_timer">Ustal czas rundy</string>
+    <string name="string_rules_textview">
+        W grze biorą udział gracze i szpieg (lub szpiedzy). Zwykli gracze znają wylosowaną lokalizację. Zadaniem szpiega jest odganąć lokalizację. Po rozpoczęciu rozgrywki przekazujcie sobie po kolei telefon, aby dowiedzieć się, jakie role pełnicie. \n \n
+
+        Po wylosowaniu ról zadaniem graczy jest wzajemne zadawanie pytań przez wszystkich uczestników (graczy i szpiegów) dotyczących danego miejsca. Gracze mają w taki sbosób zadawać pytania i odpowiedzi, by szpiedzy nie domyślili się, o jakiej lokalizacji mowa. \n \n
+
+        Po upływie wyznaczonego czasu gracze wyznaczają spośród siebie osoby, które podejrzewają o bycie szpiegiem. Jeżeli szpiedzy zostaną poprawnie wytypowani, przegrywają. Wygrywają wówczas, gdy gracze wskażą przynajmniej jedną osobę, która nie była szpiegiem.
+    </string>
 </resources>
