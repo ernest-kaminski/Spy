@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +22,7 @@ import com.example.spy.models.CategoryModel;
 import com.example.spy.models.SpyGameModel;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class DetailsFragment extends Fragment implements CategoriesAdapter.OnItemClickInterface {
 
@@ -31,14 +34,44 @@ public class DetailsFragment extends Fragment implements CategoriesAdapter.OnIte
     private SpyGameModel spyGameModel;
     private Context context;
 
+    private Button plusBtn, minusBtn;
+    private int counter;
+    private TextView counterTextview;
+    private static final String constantString = " min.";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.details_fragment, container, false);
 
         ArrayList<CategoryModel> categories = new ArrayList<CategoryModel>();
-        context = getActivity().getApplicationContext();
+        context = requireActivity().getApplicationContext();
         spyGameModel = ((appRunner) context).getSpyGameModel();
+
+        plusBtn = (Button) v.findViewById(R.id.details_btn_plus);
+        minusBtn = (Button) v.findViewById(R.id.details_btn_minus);
+        counterTextview = (TextView) v.findViewById(R.id.details_counter);
+        counter = spyGameModel.getTimeInMinutes();
+        counterTextview.setText(counter + constantString);
+
+        plusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(counter < 9){
+                    counter++;
+                    onBtnPressedFunction();
+                }
+            }
+        });
+
+        minusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(counter > 1){
+                    counter--;
+                    onBtnPressedFunction();
+                }
+            }
+        });
 
         if(spyGameModel.getCategories().size() == 0){
             categories.add(new CategoryModel(0, "Geografia", false));
@@ -71,5 +104,15 @@ public class DetailsFragment extends Fragment implements CategoriesAdapter.OnIte
             spyGameModel.getCategories().get(categoryModel.getCategoryID()).setChecked(false);
         }
 
+    }
+
+    private void updateSpyGameModel(SpyGameModel spyGameModel){
+        ((appRunner) context).setSpyGameModel(spyGameModel);
+    }
+
+    private void onBtnPressedFunction(){
+        counterTextview.setText(counter + constantString);
+        spyGameModel.setTimeInMinutes(counter);
+        updateSpyGameModel(spyGameModel);
     }
 }

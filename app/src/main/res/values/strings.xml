@@ -15,4 +15,5 @@
 
         Po upływie wyznaczonego czasu gracze wyznaczają spośród siebie osoby, które podejrzewają o bycie szpiegiem. Jeżeli szpiedzy zostaną poprawnie wytypowani, przegrywają. Wygrywają wówczas, gdy gracze wskażą przynajmniej jedną osobę, która nie była szpiegiem.
     </string>
+    <string name="string_summary">Podsumowanie</string>
 </resources>

@@ -16,7 +16,8 @@ public class SummaryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.categories_fragment, container, false);
+        View v = inflater.inflate(R.layout.summary_fragment, container, false);
+
 
 
 
